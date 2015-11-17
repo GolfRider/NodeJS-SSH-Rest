@@ -28,11 +28,11 @@ function configureDevice(req,res,next){
 function execSSH(deviceInfo,res){
    var ssh = new SSH({  host: deviceInfo.host,   user: deviceInfo.user,   pass: deviceInfo.pass});
    ssh.exec(deviceInfo.cmd, {     
-                                         out: function(data){ 
-										                      res.write(data);
-															  res.end();
-													        }
-										});
+                              out: function(data){ 
+			                  res.write(data);
+			       		  res.end();
+			        }
+			});
 	ssh.start();									   
 }
 
