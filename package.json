@@ -1,0 +1,21 @@
+{
+  "name": "sdn-picos",
+  "version": "1.0.0",
+  "description": "SDN with Pica8OS",
+  "main": "server.js",
+  "dependencies": {
+    "node-restify-swagger": "^0.1.8",
+    "restify": "^4.0.3",
+    "simple-ssh": "^0.8.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "sdn"
+  ],
+  "author": "skoti",
+  "license": "MIT"
+}

@@ -1,0 +1,82 @@
+<html>
+<head>
+<script src='/jquery-2.1.4.min.js'></script>
+<script>
+
+
+$(document).ready(function(){
+   $("#btn").click(function(){
+    
+    var host=$("#device").val();
+	var user=$("#user").val();
+	var pass=$("#pass").val();
+	var cmd=$("#cmd").val();
+	
+	console.log("hsot:"+host);
+	console.log("s:"+user);
+	console.log("p:"+pass);
+	console.log("c:"+cmd);
+	
+	$.ajax({
+           method: "POST",
+           url: "/device",
+           data: JSON.stringify({ "host":host,
+					"user":user,
+					"pass":pass,
+					"cmd":cmd
+				}),
+			data1:JSON.stringify({
+			  "host":"sv2lxnoccasqa01",
+			  "user":"gdev",
+			  "pass":"gdev",
+			  "cmd":"ps -eaf|grep sshd"
+			}),
+			contentType: "application/json;charset=utf-8",
+			dataType:"json",
+            complete: function(msg){
+			             $("#resp").html(msg.responseText);
+            			 
+			          }			
+				
+    });
+     
+  
+	
+  });
+});
+
+</script>
+
+<style>
+pre {
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+</style>
+
+</head>
+
+<body>
+<p> Configure Switch </p>
+
+<form>
+    <input id="device" type="text" name="device" placeholder="Enter switch host name">  </input> <br/>
+	<input id="user" type="text" name="user" placeholder="Enter user name">  </input> <br/>
+    <input id="pass" type="text" name="pass" placeholder="Enter password">  </input>  <br/>
+	<input id="cmd" type="text" name="cmd" placeholder="Enter command">  </input> <br/><br/>
+	<button  id="btn" type="button">Configure Switch</button>
+
+</form>
+<br/> Output:
+<div id="resp" style="white-space: pre-wrap; width:450px;">content</div>
+
+ <pre id="resp1" >
+   <code id="resp2">
+   </code>
+ </pre>
+
+</body>
+</html>
