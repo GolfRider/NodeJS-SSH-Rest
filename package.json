@@ -1,7 +1,7 @@
 {
   "name": "sdn-picos",
   "version": "1.0.0",
-  "description": "SDN with Pica8OS",
+  "description": "SSH Commands Execution in NodeJS",
   "main": "server.js",
   "dependencies": {
     "node-restify-swagger": "^0.1.8",
@@ -16,6 +16,6 @@
   "keywords": [
     "sdn"
   ],
-  "author": "skoti",
+  "author": "Santosh",
   "license": "MIT"
 }
