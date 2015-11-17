@@ -1,5 +1,5 @@
 {
-  "name": "sdn-picos",
+  "name": "ssh-node-js",
   "version": "1.0.0",
   "description": "SSH Commands Execution in NodeJS",
   "main": "server.js",
@@ -14,7 +14,7 @@
     "start": "node server.js"
   },
   "keywords": [
-    "sdn"
+    "ssh","nodejs"
   ],
   "author": "Santosh",
   "license": "MIT"
